@@ -126,3 +126,11 @@ input:invalid {
   border-style: solid;
   border-color: tomato;
 }
+
+.details {
+  display: block;
+}
+
+.detailed-image {
+  max-width: 300px;
+}

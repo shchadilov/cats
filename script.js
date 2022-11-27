@@ -6,7 +6,7 @@ const addForm = document.forms.addForm;
 const updForm = document.forms.updForm;
 const cards = document.getElementsByClassName('card');
 
-let user = 'kadilov';
+let user = 'shchadilov';
 
 popupBlock.querySelectorAll('.popup__close').forEach(function (btn) {
   btn.addEventListener('click', function () {
@@ -61,7 +61,7 @@ const createCard = function (cat, parent) {
     updForm.setAttribute('data-id', cat.id)
   })
 
-  card.append(img, name, del, upd);
+  card.append(img, name, upd, del);
   parent.append(card);
 }
 
@@ -105,6 +105,7 @@ const addCat = function (cat) {
       if (data.message === 'ok') {
         createCard(cat, container);
         addForm.reset();
+        popupAdd.classList.remove('active');
         popupBlock.classList.remove('active');
       }
     });
@@ -173,7 +174,7 @@ const updCat = async function (obj, id) {
 };
 
 const updCard = function(data, id) {
-  for (let i = 0; index < cards.length; i++) {
+  for (let i = 0; i < cards.length; i++) {
     let card = cards[i];
     if (card.dataset.id === id) {
       card.firstElementChild.style.backgroundImage = 
